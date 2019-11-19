@@ -1,16 +1,6 @@
-export class Item {
-    name: string;
-    sellIn: number;
-    quality: number;
+import Item from './Item';
 
-    constructor(name, sellIn, quality) {
-        this.name = name;
-        this.sellIn = sellIn;
-        this.quality = quality;
-    }
-}
-
-export class GildedRose {
+class GildedRose {
     items: Array<Item>;
 
     constructor(items = [] as Array<Item>) {
@@ -67,3 +57,5 @@ export class GildedRose {
         return this.items;
     }
 }
+
+export default GildedRose;
