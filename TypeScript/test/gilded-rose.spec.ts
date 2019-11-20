@@ -70,7 +70,7 @@ describe('Gilded Rose', function () {
       });
     });
 
-    xdescribe('conjured items', function() {
+    describe('conjured items', function() {
       it('reduces quality by 2', function () {
         const gildedRose = new GildedRose([new Item('Conjured Mana Cake', 10, 10)]);
         const items = gildedRose.updateQuality();
