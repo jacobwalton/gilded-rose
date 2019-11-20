@@ -1,14 +1,19 @@
 import Item from './Item';
 
 class GildedRoseItem extends Item {
+  minQuality = 0;
+  maxQuality = 50;
+  dailyQualityChange = -1;
+  expiredDailyQualityChange = -2;
+
   updateQuality() {
-    if (this.quality === 0) {
+    if (this.quality <= this.minQuality || this.quality >= this.maxQuality) {
       return;
     }
-    if (this.sellIn > 0) {
-      this.quality--;
+    if (this.sellIn >= 0) {
+      this.quality = this.quality + this.dailyQualityChange;
     } else {
-      this.quality = this.quality - 2;
+      this.quality = this.quality + this.expiredDailyQualityChange;
     }
   }
 
